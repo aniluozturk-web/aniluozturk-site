@@ -20,7 +20,7 @@
   <div class="container masthead-inner">
     <div class="brand">
       <a href="index.html" aria-label="Anıl Öztürk — Home">
-        <span class="brand-mark" aria-hidden="true">AÖ</span>
+        <span class="brand-mark" aria-hidden="true">A<sup class="brand-u">u</sup>Ö</span>
         <span class="brand-name">Anıl Öztürk</span>
       </a>
     </div>
@@ -51,12 +51,12 @@
 <div class="rosette-row" aria-hidden="true">
   <div class="container">
     <div class="rosette">
-      <svg class="rosette-mark" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-        <g fill="none" stroke="currentColor" stroke-width="3.2" stroke-linejoin="round">
-          <rect x="22" y="22" width="56" height="56"/>
-          <rect x="22" y="22" width="56" height="56" transform="rotate(45 50 50)"/>
-        </g>
-        <circle cx="50" cy="50" r="6" fill="currentColor"/>
+      <svg class="rosette-mark" viewBox="-32 -16 64 32" xmlns="http://www.w3.org/2000/svg">
+        <!-- Çengelli baklava — single hooked diamond, in conversation
+             with the kilim band's diamonds at the foot of the page. -->
+        <path d="M-22,0 L0,-11 L22,0 L0,11 Z" stroke="currentColor" fill="none" stroke-width="1.4" stroke-linejoin="miter"/>
+        <path d="M-8,0 L0,-3 L8,0 L0,3 Z" style="fill: var(--lu-bronze-tint)"/>
+        <path d="M-22,0 l-3.5,-2.5 M-22,0 l-3.5,2.5 M22,0 l3.5,-2.5 M22,0 l3.5,2.5 M0,-11 l-2.5,-3 M0,-11 l2.5,-3 M0,11 l-2.5,3 M0,11 l2.5,3" stroke="currentColor" fill="none" stroke-width="1.2" stroke-linejoin="round"/>
       </svg>
     </div>
   </div>
@@ -79,6 +79,52 @@
     </div>
   </div>
 </section>
+
+<div class="kilim-row" aria-hidden="true">
+  <div class="container">
+    <svg class="kilim-anadolu" viewBox="0 0 1000 44" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <g id="k-diamond">
+          <!-- Çengelli baklava — hooked diamond (Anatolian protective motif) -->
+          <path class="k-diamond-line" d="M-50,0 L0,-13 L50,0 L0,13 Z" fill="none"/>
+          <path class="k-diamond-fill" d="M-12,0 L0,-4 L12,0 L0,4 Z"/>
+          <!-- Hooks (çengel) at each of the four points -->
+          <path class="k-diamond-line" d="M-50,0 l-5,-3 M-50,0 l-5,3 M50,0 l5,-3 M50,0 l5,3 M0,-13 l-3,-5 M0,-13 l3,-5 M0,13 l-3,5 M0,13 l3,5" fill="none"/>
+        </g>
+        <g id="k-star">
+          <!-- Yıldız — eight-pointed star, two squares offset 45° -->
+          <rect class="k-star-line" x="-5.5" y="-5.5" width="11" height="11" fill="none"/>
+          <rect class="k-star-line" x="-5.5" y="-5.5" width="11" height="11" fill="none" transform="rotate(45)"/>
+        </g>
+      </defs>
+
+      <!-- Su yolu — top zigzag border -->
+      <polyline class="k-border" points="0,3 50,7 100,3 150,7 200,3 250,7 300,3 350,7 400,3 450,7 500,3 550,7 600,3 650,7 700,3 750,7 800,3 850,7 900,3 950,7 1000,3" fill="none"/>
+
+      <!-- Eight çengelli baklava across the field -->
+      <use href="#k-diamond" x="62.5"  y="22"/>
+      <use href="#k-diamond" x="187.5" y="22"/>
+      <use href="#k-diamond" x="312.5" y="22"/>
+      <use href="#k-diamond" x="437.5" y="22"/>
+      <use href="#k-diamond" x="562.5" y="22"/>
+      <use href="#k-diamond" x="687.5" y="22"/>
+      <use href="#k-diamond" x="812.5" y="22"/>
+      <use href="#k-diamond" x="937.5" y="22"/>
+
+      <!-- Seven yıldız between the diamonds -->
+      <use href="#k-star" x="125" y="22"/>
+      <use href="#k-star" x="250" y="22"/>
+      <use href="#k-star" x="375" y="22"/>
+      <use href="#k-star" x="500" y="22"/>
+      <use href="#k-star" x="625" y="22"/>
+      <use href="#k-star" x="750" y="22"/>
+      <use href="#k-star" x="875" y="22"/>
+
+      <!-- Su yolu — bottom zigzag border (mirror) -->
+      <polyline class="k-border" points="0,41 50,37 100,41 150,37 200,41 250,37 300,41 350,37 400,41 450,37 500,41 550,37 600,41 650,37 700,41 750,37 800,41 850,37 900,41 950,37 1000,41" fill="none"/>
+    </svg>
+  </div>
+</div>
 
 </main>
 

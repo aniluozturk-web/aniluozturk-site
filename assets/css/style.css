@@ -157,6 +157,25 @@ main { flex: 1; }
   line-height: 1;
   font-feature-settings: "kern" 1, "dlig" 1;
 }
+
+/* The discreet 'u' — Anıl's favourite letter, tucked into the monogram
+   under the A's right shoulder so it reads as a calligraphic detail of
+   the A's letterform rather than a separate letter (no 'Au' gold-symbol
+   accident). Smaller, lower, and pulled left into the A.
+   Kept aria-hidden via the parent .brand-mark so screen readers still
+   announce only "Anıl Öztürk". */
+.brand-u {
+  font-family: var(--serif-display);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 0.32em;             /* small — about 0.5rem against 1.55rem A */
+  color: var(--lu-bronze);
+  margin: 0 -0.04em 0 -0.22em;   /* tucks left under A; slight tighten to Ö */
+  vertical-align: 0.08em;        /* near baseline — sits on the A's foot, not above */
+  letter-spacing: 0;
+  opacity: 0.7;
+  line-height: 1;
+}
 .brand-name {
   font-family: var(--serif-display);
   font-style: italic;
@@ -2182,12 +2201,13 @@ p.more-link a {
   font-weight: 500;
 }
 
-/* ═══ Rosette — eight-pointed star ornament ═══════════════════════════════
-   A larger sister to the diadem, used on the home page hero and the 404.
-   The eight-pointed star (two squares offset by 45°) is the shared geometry
-   of Anatolian Iznik tile, Andalusi-Sephardic embroidery, and Mizrahi
-   metalwork — a quietly cross-cultural mark. Pomegranate stroke; hairlines
-   in a faded pomegranate (--rule-bronze) on either side. */
+/* ═══ Rosette slot — home page signature ornament ═════════════════════════
+   A horizontal layout slot (hairlines on either side, ornament in the
+   middle) used on the home page between hero and Look-Up. The slot is
+   layout-only; the ornament inside is currently a çengelli baklava
+   (hooked diamond) that picks up the kilim band's central motif and
+   sets it alone above the page. Class names kept as `.rosette*` for
+   layout consistency with the rest of the site. */
 
 .rosette-row {
   padding: 8px 0 32px;
@@ -2199,7 +2219,7 @@ p.more-link a {
   justify-content: center;
   gap: 18px;
   margin: 0 auto;
-  max-width: 240px;
+  max-width: 280px;
 }
 
 .rosette::before, .rosette::after {
@@ -2210,11 +2230,56 @@ p.more-link a {
 }
 
 .rosette-mark {
-  width: 28px;
+  width: 56px;
   height: 28px;
   color: var(--lu-bronze);
   flex-shrink: 0;
   display: block;
+}
+
+/* ═══ Anatolian kilim band ════════════════════════════════════════════════
+   Long horizontal motif placed once on the home page, just above the
+   footer, as a closing flourish. Composition follows Western/Central
+   Anatolian kilim conventions: zigzag su yolu (waterway) borders top and
+   bottom, a row of çengelli baklava (hooked diamond — protective motif)
+   with saffron-filled cores, and yıldız (eight-pointed stars) between
+   them. Single-band horizontal format — long rather than tall. */
+
+.kilim-row {
+  padding: 24px 0 8px;
+}
+
+.kilim-anadolu {
+  display: block;
+  width: 100%;
+  max-width: 880px;
+  height: auto;
+  margin: 0 auto;
+}
+
+.kilim-anadolu .k-border {
+  stroke: var(--lu-bronze);
+  stroke-width: 1.2;
+  stroke-linejoin: miter;
+}
+
+.kilim-anadolu .k-diamond-line {
+  stroke: var(--lu-bronze);
+  stroke-width: 1.4;
+  stroke-linejoin: miter;
+  stroke-linecap: round;
+  fill: none;
+}
+
+.kilim-anadolu .k-diamond-fill {
+  fill: var(--lu-bronze-tint);
+}
+
+.kilim-anadolu .k-star-line {
+  stroke: var(--lu-blue);
+  stroke-width: 1.0;
+  stroke-linejoin: miter;
+  fill: none;
 }
 
 /* ═══ Reduced motion already default ═══ */
