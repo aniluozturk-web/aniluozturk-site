@@ -1,30 +1,34 @@
 /* ═══════════════════════════════════════════════════════════════════════════
-   Anıl Öztürk — Specimen Catalogue
-   Personal site, Lund-aligned palette per LU Grafisk Manual v2.0.1 (2024).
+   Anıl Öztürk — personal academic site.
+   Palette: warm Mediterranean / Anatolian / Sephardic register —
+   Iznik teal, pomegranate, saffron, aubergine, on a bone-warm ground.
+   Token names retain the --lu-* prefix for backwards compatibility, but
+   the values are no longer Lund-aligned.
    ═══════════════════════════════════════════════════════════════════════════ */
 
 :root {
-  /* Lund primary */
-  --lu-blue:        #000080;   /* Logo text colour, headings */
-  --lu-bronze:      #9c6114;   /* Logo seal, accents, ornament */
-  --lu-bronze-tint: #c89556;   /* 50% bronze for hairlines */
+  /* Primary accents */
+  --lu-blue:        #0e5c6e;   /* Iznik teal — was Lund navy. Headings, links, button bg. */
+  --lu-bronze:      #a23046;   /* Pomegranate — was bronze. Monogram, ornament, accent. */
+  --lu-bronze-tint: #d49b3b;   /* Saffron — was bronze tint. Warm gold, 50%-weight rules. */
+  --aubergine:      #5b2a4f;   /* Aubergine — tertiary accent for ornaments and tile bands. */
 
-  /* Lund pastels (warm, distinctive) */
-  --pastel-pink:  #e9c4c7;     /* "Pastel green" in manual; warm rose tone */
-  --pastel-blue:  #b9d3dc;
-  --pastel-sage:  #adcab8;
-  --pastel-warm:  #d6d2c4;
-  --pastel-grey:  #bfb8af;
+  /* Pastels — Mediterranean shift */
+  --pastel-pink:  #f4cfc8;     /* warm rose blush */
+  --pastel-blue:  #bddfe3;     /* turquoise haze */
+  --pastel-sage:  #d4d8a6;     /* olive sage */
+  --pastel-warm:  #ead8b3;     /* warm sand / wheat */
+  --pastel-grey:  #c9c0b1;
 
   /* Surfaces */
-  --bone:        #fdfaf3;
-  --bone-warm:   #f6f0e3;
-  --paper:       #fbf8f0;
-  --ink:         #14141c;
-  --ink-soft:    #4d4c44;
-  --ink-mute:    #7a7770;
-  --rule-soft:   rgba(20, 20, 28, 0.10);
-  --rule-bronze: rgba(156, 97, 20, 0.30);
+  --bone:        #fbf5e8;      /* slightly warmer paper */
+  --bone-warm:   #f5ead2;
+  --paper:       #fdf8eb;
+  --ink:         #1a1320;      /* near-black with a faint aubergine undertone */
+  --ink-soft:    #4a3c47;
+  --ink-mute:    #7d7178;
+  --rule-soft:   rgba(26, 19, 32, 0.10);
+  --rule-bronze: rgba(162, 48, 70, 0.30);   /* now pomegranate hairline */
 
   /* Type scale */
   --serif-display: 'EB Garamond', 'Adobe Garamond Pro', Garamond, 'Times New Roman', serif;
@@ -498,11 +502,12 @@ section.body:last-of-type { border-bottom: none; }
 
 footer.site {
   border-top: 1px solid var(--ink);
-  padding: 56px 0 40px;
+  padding: 36px 0 32px;
   background: var(--bone);
   margin-top: 64px;
 }
 
+/* Legacy two-column grid kept for any pages that still reference it. */
 footer.site .grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -511,6 +516,19 @@ footer.site .grid {
 @media (max-width: 540px) {
   footer.site .grid { grid-template-columns: 1fr; }
 }
+
+/* Slim horizontal ribbon for the Profiles row (current footer pattern).
+   The masthead is sticky, so duplicating page links in the footer is
+   redundant — only the off-site profiles need to live here. */
+footer.site .footer-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 26px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+footer.site .footer-row li { display: inline; }
 
 footer.site h6 {
   font-family: var(--mono);
@@ -907,46 +925,6 @@ form.contact button {
   justify-self: start;
 }
 form.contact button:hover { background: var(--lu-bronze); }
-
-/* ═══ Index of works (home grid) ═══ */
-
-.index-strip {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 18px;
-  margin: 56px 0 0;
-}
-@media (max-width: 880px) { .index-strip { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 480px) { .index-strip { grid-template-columns: 1fr; } }
-
-.idx-card {
-  border-top: 1px solid var(--lu-bronze);
-  padding-top: 14px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-.idx-card .num {
-  font-family: var(--mono);
-  font-size: 0.7rem;
-  color: var(--ink-mute);
-  letter-spacing: 0.16em;
-}
-.idx-card .ttl {
-  font-family: var(--serif-display);
-  font-size: 1.1rem;
-  font-weight: 500;
-  line-height: 1.2;
-  color: var(--ink);
-}
-.idx-card .sub {
-  font-family: var(--sans);
-  font-size: 0.78rem;
-  color: var(--ink-mute);
-  line-height: 1.5;
-}
-.idx-card a { color: var(--ink); background: none; }
-.idx-card a:hover .ttl { color: var(--lu-blue); }
 
 /* ═══ Print ═══ */
 
@@ -2204,21 +2182,40 @@ p.more-link a {
   font-weight: 500;
 }
 
-.affiliation-note {
-  font-family: var(--mono);
-  font-size: 0.74rem;
-  letter-spacing: 0.06em;
-  color: var(--ink-mute);
-  margin-top: 22px;
-  text-transform: uppercase;
+/* ═══ Rosette — eight-pointed star ornament ═══════════════════════════════
+   A larger sister to the diadem, used on the home page hero and the 404.
+   The eight-pointed star (two squares offset by 45°) is the shared geometry
+   of Anatolian Iznik tile, Andalusi-Sephardic embroidery, and Mizrahi
+   metalwork — a quietly cross-cultural mark. Pomegranate stroke; hairlines
+   in a faded pomegranate (--rule-bronze) on either side. */
+
+.rosette-row {
+  padding: 8px 0 32px;
 }
 
-.affiliation-note a {
-  color: var(--ink-mute);
-  background-image: linear-gradient(currentColor, currentColor);
-  background-size: 0 1px;
+.rosette {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  margin: 0 auto;
+  max-width: 240px;
 }
-.affiliation-note a:hover { background-size: 100% 1px; }
+
+.rosette::before, .rosette::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--rule-bronze);
+}
+
+.rosette-mark {
+  width: 28px;
+  height: 28px;
+  color: var(--lu-bronze);
+  flex-shrink: 0;
+  display: block;
+}
 
 /* ═══ Reduced motion already default ═══ */
 @media (prefers-reduced-motion: reduce) {
