@@ -2259,7 +2259,24 @@ p.more-link a {
 .hero-quote {
   max-width: 740px;
   margin: 0 auto;
-  text-align: center;
+  text-align: left;
+  position: relative;
+}
+
+/* Decorative opening quotation mark — sits above the English line as a
+   typographic medallion, anchored to the left axis (with the English). */
+.hero-quote::before {
+  content: "\201C";
+  display: block;
+  font-family: var(--serif-display);
+  font-style: normal;
+  font-size: clamp(5rem, 10vw, 7.5rem);
+  line-height: 0.7;
+  color: var(--ink-mute);
+  opacity: 0.45;
+  margin: 0 0 -8px -0.08em;
+  text-align: left;
+  user-select: none;
 }
 
 .hero-quote blockquote {
@@ -2268,7 +2285,7 @@ p.more-link a {
 
 .hero-quote .quote-english {
   font-family: var(--serif-display);
-  font-style: italic;
+  font-style: normal;
   font-size: clamp(1.5rem, 3.2vw, 2.2rem);
   line-height: 1.45;
   color: var(--ink);
@@ -2278,28 +2295,58 @@ p.more-link a {
 }
 
 .hero-quote .quote-german {
-  font-family: var(--serif-body);
-  font-style: italic;
-  font-size: clamp(1rem, 1.8vw, 1.15rem);
-  line-height: 1.5;
+  /* Fraktur — historically Jhering's books were typeset in Fraktur by
+     Breitkopf & Härtel (Leipzig). UnifrakturMaguntia is a digitisation of
+     a 19th-century Unger-Fraktur, fitting Jhering's period. Bumped slightly
+     larger because Fraktur's optical size reads small at body weights.
+     Anchored flush right as a counterpoint to the English flush-left line —
+     a bilingual call-and-response. */
+  font-family: 'UnifrakturMaguntia', var(--serif-body);
+  font-style: normal;
+  font-size: clamp(1.15rem, 2.1vw, 1.45rem);
+  line-height: 1.55;
   color: var(--ink-soft);
   margin: 0 0 26px;
+  text-align: right;
   hyphens: manual;
   -webkit-hyphens: manual;
 }
 
 .hero-quote .quote-cite {
-  font-family: var(--sans);
-  font-size: 0.78rem;
-  letter-spacing: 0.04em;
-  color: var(--ink-mute);
-  margin: 0;
+  margin: 8px 0 0;
   hyphens: manual;
   -webkit-hyphens: manual;
 }
 
-.hero-quote .quote-cite cite {
+/* Author line — sized up and letter-spaced as a museum-label so the
+   attribution to Jhering is unmistakable, not buried in metadata. */
+.hero-quote .cite-author {
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.95rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink);
+  font-weight: 500;
+  margin: 0 0 6px;
+}
+
+/* Source line — smaller, italic title in serif body, surrounded by
+   sans meta in mute ink. Sits below the author line. */
+.hero-quote .cite-source {
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  color: var(--ink-mute);
+}
+
+.hero-quote .cite-source cite {
+  font-family: var(--serif-body);
   font-style: italic;
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+  letter-spacing: 0;
 }
 
 .rosette {

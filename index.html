@@ -11,7 +11,7 @@
 <title>Anıl Öztürk</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body data-page="home">
@@ -61,15 +61,104 @@
 
 <section class="hero-epigraph">
   <div class="container">
-    <figure class="hero-quote">
+    <figure class="hero-quote" id="hero-quote">
       <blockquote>
-        <p class="quote-english" lang="en">The purpose is the creator of the entire law.</p>
-        <p class="quote-german" lang="de">Der Zweck ist der Schöpfer des gesamten Rechts.</p>
+        <p class="quote-english" lang="en" id="q-en">The purpose is the creator of the entire law.</p>
+        <p class="quote-german" lang="de" id="q-de">Der Zweck ist der Schöpfer des ganzen Rechts.</p>
       </blockquote>
-      <figcaption class="quote-cite">Rudolf von Jhering, <cite>Der Zweck im Recht</cite>, vol. I (Leipzig, 1877)</figcaption>
+      <figcaption class="quote-cite" id="q-cite">
+        <span class="cite-author">Rudolf von Jhering</span>
+        <span class="cite-source"><cite>Der Zweck im Recht</cite>, vol. I&#8202;·&#8202;Leipzig, 1877</span>
+      </figcaption>
     </figure>
   </div>
 </section>
+
+<!-- Rotating Jhering epigraph. A new quote is selected on every page load.
+     Each quote: { en, de, work, year, vol? }. German verbatim from primary
+     sources (gutzitiert.de cross-checked against German Wikiquote and the
+     1883 Zweck im Recht title page); English from Lalor (1879) for Kampf
+     and from a faithful rendering for Zweck. -->
+<script>
+(function(){
+  var quotes = [
+    {
+      en: "The end of the law is peace. The means to that end is war.",
+      de: "Das Ziel des Rechts ist der Friede, das Mittel dazu der Kampf.",
+      work: "Der Kampf ums Recht", year: "1872"
+    },
+    {
+      en: "The sword without the scales is brute force; the scales without the sword is the impotence of law.",
+      de: "Das Schwert ohne die Wage ist die nackte Gewalt, die Wage ohne das Schwert die Ohnmacht des Rechts.",
+      work: "Der Kampf ums Recht", year: "1872"
+    },
+    {
+      en: "The idea of the law is an eternal Becoming; that which has Become must yield to the new Becoming.",
+      de: "Die Idee des Rechts ist ewiges Werden, das Gewordene aber muss dem neuen Werden weichen.",
+      work: "Der Kampf ums Recht", year: "1872"
+    },
+    {
+      en: "The life of the law is struggle — a struggle of nations, of state power, of estates, of individuals.",
+      de: "Das Leben des Rechts ist Kampf, ein Kampf der Völker, der Staatsgewalt, der Stände, der Individuen.",
+      work: "Der Kampf ums Recht", year: "1872"
+    },
+    {
+      en: "All the law in the world has been obtained by strife; every important legal proposition had first to be wrung from those who denied it.",
+      de: "Alles Recht in der Welt ist erstritten worden, jeder wichtige Rechtssatz hat erst denen, die sich ihm widersetzten, abgerungen werden müssen.",
+      work: "Der Kampf ums Recht", year: "1872"
+    },
+    {
+      en: "Every man is a born fighter for the law in the interest of society.",
+      de: "Jeder ist ein geborner Kämpfer um's Recht im Interesse der Gesellschaft.",
+      work: "Der Kampf ums Recht", year: "1872"
+    },
+    {
+      en: "Law is uninterrupted labour — not of the state power alone, but of the entire people.",
+      de: "Recht ist unausgesetzte Arbeit, und zwar nicht etwa bloss der Staatsgewalt, sondern des ganzen Volkes.",
+      work: "Der Kampf ums Recht", year: "1872"
+    },
+    {
+      en: "The purpose is the creator of the entire law.",
+      de: "Der Zweck ist der Schöpfer des ganzen Rechts.",
+      work: "Der Zweck im Recht", vol: "vol. I", year: "1877"
+    },
+    {
+      en: "Money is the true apostle of equality; where money is at stake, all social, political, religious, and national prejudices and antagonisms lose their force.",
+      de: "Das Geld ist der wahre Apostel der Gleichheit; wo es aufs Geld ankommt, verlieren alle socialen, politischen, religiösen, nationalen Vorurtheile und Gegensätze ihre Geltung.",
+      work: "Der Zweck im Recht", vol: "vol. I", year: "1877"
+    },
+    {
+      en: "That the wolves cry for freedom is intelligible; when the sheep join in their cry, they only prove that they are sheep.",
+      de: "Dass die Wölfe nach Freiheit schreien, ist begreiflich; wenn die Schaafe in ihr Geschrei einstimmen, so beweisen sie damit nur, dass sie Schaafe sind.",
+      work: "Der Zweck im Recht", vol: "vol. I", year: "1877"
+    },
+    {
+      en: "Man is crippled in solitude; the true, complete, healthy man exists only in society.",
+      de: "Der Mensch verkrüppelt in der Einsamkeit, der richtige, volle, gesunde Mensch ist nur der Mensch in der Gesellschaft.",
+      work: "Der Zweck im Recht", vol: "vol. II", year: "1883"
+    },
+    {
+      en: "The legislator should think like a philosopher but speak like a peasant.",
+      de: "Der Gesetzgeber soll denken wie ein Philosoph, aber reden wie ein Bauer.",
+      work: "Der Zweck im Recht", year: "1877–1883"
+    }
+  ];
+  var i = Math.floor(Math.random() * quotes.length);
+  var q = quotes[i];
+  var en = document.getElementById('q-en');
+  var de = document.getElementById('q-de');
+  var ct = document.getElementById('q-cite');
+  if (en && de && ct) {
+    en.textContent = q.en;
+    de.textContent = q.de;
+    var src = '<cite>' + q.work + '</cite>';
+    if (q.vol) src += ', ' + q.vol;
+    src += ' · Leipzig, ' + q.year;
+    ct.innerHTML = '<span class="cite-author">Rudolf von Jhering</span>' +
+                   '<span class="cite-source">' + src + '</span>';
+  }
+})();
+</script>
 
 <section class="body">
   <div class="container">
