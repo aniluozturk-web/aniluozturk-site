@@ -777,6 +777,8 @@ footer.site .lu-attribution img {
   color: var(--ink-soft);
   margin-top: 3px;
   line-height: 1.4;
+  hyphens: manual;
+  -webkit-hyphens: manual;
 }
 .cv-detail {
   margin-top: 10px;
