@@ -78,17 +78,87 @@
     </div>
   </div>
 </section>
+<div class="kilim-row" aria-hidden="true">
+  <svg class="kilim-anadolu" xmlns="http://www.w3.org/2000/svg" width="100%" height="90">
+    <defs>
+      <!-- Çengelli baklava — hooked diamond. Outer outline + concentric inner
+           diamond + saffron core + four-point hooks (çengel). The hooks ward
+           off the evil eye; the diamond is fertility and abundance. -->
+      <g id="k-diamond">
+        <path class="k-diamond-line" d="M-55,0 L0,-13 L55,0 L0,13 Z" fill="none"/>
+        <path class="k-diamond-fine" d="M-32,0 L0,-7 L32,0 L0,7 Z" fill="none"/>
+        <path class="k-diamond-fill" d="M-14,0 L0,-4 L14,0 L0,4 Z"/>
+        <path class="k-diamond-line" d="M-55,0 l-4,-3 M-55,0 l-4,3 M55,0 l4,-3 M55,0 l4,3 M0,-13 l-3,-4 M0,-13 l3,-4 M0,13 l-3,4 M0,13 l3,4" fill="none"/>
+      </g>
+      <!-- Muska — protective talisman triangle. Three concentric triangles
+           alternating saffron fill / pomegranate outline / saffron fill.
+           Pure kilim geometry. -->
+      <g id="k-muska">
+        <path class="k-diamond-fill" d="M0,-12 L-10,7 L10,7 Z"/>
+        <path class="k-diamond-line" d="M0,-12 L-10,7 L10,7 Z" fill="none"/>
+        <path class="k-diamond-fine" d="M0,-6 L-5,2.5 L5,2.5 Z" fill="none"/>
+        <path class="k-diamond-fill" d="M0,-2.5 L-2.5,1.5 L2.5,1.5 Z"/>
+      </g>
+      <!-- Elibelinde — woman with hands on hips. Saffron-filled triangular
+           head, outlined rectangular body with a centre hairline (dress
+           fold), saffron-filled hooked arm-triangles meeting at the hips
+           (hands on hips, geometrically rhyming with the diamond's çengel),
+           outlined trapezoidal skirt with four vertical kilim-weave
+           hairlines. The most iconic Anatolian motif: femininity,
+           motherhood, fertility. Sits on the tile boundary so adjacent
+           tiles meet to form the complete figure. -->
+      <g id="k-eli">
+        <path class="k-diamond-fill" d="M0,-11 L-3,-7 L3,-7 Z"/>
+        <path class="k-diamond-line" d="M0,-11 L-3,-7 L3,-7 Z" fill="none"/>
+        <path class="k-diamond-line" d="M-2.5,-7 L2.5,-7 L2.5,-2 L-2.5,-2 Z" fill="none"/>
+        <path class="k-diamond-fine" d="M0,-7 L0,-2" fill="none"/>
+        <path class="k-diamond-fill" d="M-2.5,-5 L-7.5,-1 L-2.5,-1 Z"/>
+        <path class="k-diamond-line" d="M-2.5,-5 L-7.5,-1 L-2.5,-1 Z" fill="none"/>
+        <path class="k-diamond-fill" d="M2.5,-5 L7.5,-1 L2.5,-1 Z"/>
+        <path class="k-diamond-line" d="M2.5,-5 L7.5,-1 L2.5,-1 Z" fill="none"/>
+        <path class="k-diamond-line" d="M-2.5,-1 L2.5,-1 L8,11 L-8,11 Z" fill="none"/>
+        <path class="k-diamond-fine" d="M-1,-1 L-2.5,11 M1,-1 L2.5,11 M-3.5,-1 L-5.3,11 M3.5,-1 L5.3,11" fill="none"/>
+      </g>
+      <!-- Tile: one period of the kilim (320 × 90 CSS pixels). Diamond — muska —
+           diamond — half elibelinde at the boundary. Adjacent tiles meet
+           to complete the elibelinde figures. Never-ending repeat. -->
+      <pattern id="kilim-tile" patternUnits="userSpaceOnUse" width="320" height="90">
+        <line class="k-edge" x1="0" y1="3" x2="320" y2="3"/>
+        <polyline class="k-border" points="0,8 40,24 80,8 120,24 160,8 200,24 240,8 280,24 320,8" fill="none"/>
+        <line class="k-edge" x1="0" y1="28" x2="320" y2="28"/>
+        <use href="#k-diamond" x="80"  y="45"/>
+        <use href="#k-muska"   x="160" y="45"/>
+        <use href="#k-diamond" x="240" y="45"/>
+        <use href="#k-eli"     x="0"   y="45"/>
+        <use href="#k-eli"     x="320" y="45"/>
+        <line class="k-edge" x1="0" y1="62" x2="320" y2="62"/>
+        <polyline class="k-border" points="0,82 40,66 80,82 120,66 160,82 200,66 240,82 280,66 320,82" fill="none"/>
+        <line class="k-edge" x1="0" y1="87" x2="320" y2="87"/>
+      </pattern>
+    </defs>
+    <rect width="100%" height="90" fill="url(#kilim-tile)"/>
+  </svg>
+</div>
+
 </main>
 
 <footer class="site">
   <div class="container">
-    <h6>Profiles</h6>
-    <ul class="footer-row">
-      <li><a href="https://orcid.org/0000-0002-8169-1602" target="_blank" rel="noopener">ORCID</a></li>
-      <li><a href="https://www.linkedin.com/in/aniluozturk" target="_blank" rel="noopener">LinkedIn</a></li>
-      <li><a href="https://www.researchgate.net/profile/Anil-Ozturk-4" target="_blank" rel="noopener">ResearchGate</a></li>
-      <li><a href="https://nuim.academia.edu/AnilOzturk" target="_blank" rel="noopener">Academia.edu</a></li>
-    </ul>
+    <div class="footer-grid">
+      <div class="footer-col footer-col-profiles">
+        <h6>Profiles</h6>
+        <ul class="footer-row">
+          <li><a href="https://orcid.org/0000-0002-8169-1602" target="_blank" rel="noopener">ORCID</a></li>
+          <li><a href="https://www.linkedin.com/in/aniluozturk" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://www.researchgate.net/profile/Anil-Ozturk-4" target="_blank" rel="noopener">ResearchGate</a></li>
+          <li><a href="https://nuim.academia.edu/AnilOzturk" target="_blank" rel="noopener">Academia.edu</a></li>
+        </ul>
+      </div>
+      <div class="footer-col footer-col-colophon">
+        <h6>Colophon</h6>
+        <p class="colophon-line">The visual design of this site was developed in collaboration with <a href="https://claude.ai" target="_blank" rel="noopener">Claude</a>, an AI assistant by <a href="https://www.anthropic.com" target="_blank" rel="noopener">Anthropic</a>.</p>
+      </div>
+    </div>
   </div>
 </footer>
 

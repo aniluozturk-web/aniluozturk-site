@@ -520,8 +520,9 @@ section.body:last-of-type { border-bottom: none; }
 /* ═══ Footer ═══ */
 
 footer.site {
-  border-top: 1px solid var(--ink);
-  padding: 36px 0 32px;
+  /* Divider above the footer is the kilim band (rendered just before </main>);
+     no border-top here, otherwise the kilim sits over a hairline. */
+  padding: 28px 0 32px;
   background: var(--bone);
   margin-top: 64px;
 }
@@ -567,6 +568,37 @@ footer.site p, footer.site li, footer.site a {
 }
 
 footer.site ul { list-style: none; }
+
+/* Two-column footer: Profiles on the left, Colophon on the right. */
+footer.site .footer-grid {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 32px 64px;
+  flex-wrap: wrap;
+}
+
+footer.site .footer-col-colophon {
+  max-width: 360px;
+}
+
+footer.site .colophon-line {
+  margin: 0;
+  font-family: var(--sans);
+  font-size: 0.84rem;
+  color: var(--ink-soft);
+  line-height: 1.6;
+  text-align: left;
+  hyphens: manual;
+  -webkit-hyphens: manual;
+}
+
+@media (max-width: 640px) {
+  footer.site .footer-grid {
+    flex-direction: column;
+    gap: 24px;
+  }
+}
 
 footer.site .colophon {
   margin-top: 36px;
@@ -2146,6 +2178,9 @@ details.course-card > summary.cc-summary:hover .cc-title { color: var(--lu-bronz
   font-size: 1.04rem;
   line-height: 1.6;
   color: var(--ink);
+  text-align: left;
+  hyphens: manual;
+  -webkit-hyphens: manual;
   margin: 0;
   position: relative;
   padding-left: 28px;
@@ -2213,6 +2248,58 @@ p.more-link a {
   padding: 8px 0 32px;
 }
 
+/* ═══ Home page Jhering epigraph ═══════════════════════════════════════════ */
+
+.hero-epigraph {
+  padding: 8px 0 56px;
+}
+
+.hero-quote {
+  max-width: 740px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.hero-quote blockquote {
+  margin: 0;
+}
+
+.hero-quote .quote-original {
+  font-family: var(--serif-display);
+  font-style: italic;
+  font-size: clamp(1.5rem, 3.2vw, 2.2rem);
+  line-height: 1.45;
+  color: var(--ink);
+  margin: 0 0 18px;
+  hyphens: manual;
+  -webkit-hyphens: manual;
+}
+
+.hero-quote .quote-trans {
+  font-family: var(--serif-body);
+  font-style: italic;
+  font-size: clamp(0.98rem, 1.6vw, 1.1rem);
+  line-height: 1.5;
+  color: var(--ink-soft);
+  margin: 0 0 26px;
+  hyphens: manual;
+  -webkit-hyphens: manual;
+}
+
+.hero-quote .quote-cite {
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  color: var(--ink-mute);
+  margin: 0;
+  hyphens: manual;
+  -webkit-hyphens: manual;
+}
+
+.hero-quote .quote-cite cite {
+  font-style: italic;
+}
+
 .rosette {
   display: flex;
   align-items: center;
@@ -2246,21 +2333,28 @@ p.more-link a {
    them. Single-band horizontal format — long rather than tall. */
 
 .kilim-row {
-  padding: 24px 0 8px;
+  padding: 28px 0 18px;
+  overflow: hidden;          /* clip the half-motifs at viewport edges */
 }
 
 .kilim-anadolu {
   display: block;
   width: 100%;
-  max-width: 880px;
-  height: auto;
-  margin: 0 auto;
+  height: 90px;
+  margin: 0;
 }
 
 .kilim-anadolu .k-border {
   stroke: var(--lu-bronze);
   stroke-width: 1.2;
   stroke-linejoin: miter;
+  fill: none;
+}
+
+.kilim-anadolu .k-edge {
+  stroke: var(--aubergine);
+  stroke-width: 0.8;
+  stroke-linecap: square;
 }
 
 .kilim-anadolu .k-diamond-line {
@@ -2271,13 +2365,27 @@ p.more-link a {
   fill: none;
 }
 
+.kilim-anadolu .k-diamond-fine {
+  stroke: var(--lu-bronze);
+  stroke-width: 0.7;
+  stroke-linejoin: miter;
+  fill: none;
+}
+
 .kilim-anadolu .k-diamond-fill {
+  fill: var(--lu-bronze-tint);
+}
+
+/* Selçuklu yıldızı — Seljuk star, solid 8-point rosette
+   (16 alternating outer/inner vertices). Saffron fill, Iznik teal
+   outline; deliberately NOT the two-interlocked-triangles form. */
+.kilim-anadolu .k-star-fill {
   fill: var(--lu-bronze-tint);
 }
 
 .kilim-anadolu .k-star-line {
   stroke: var(--lu-blue);
-  stroke-width: 1.0;
+  stroke-width: 0.9;
   stroke-linejoin: miter;
   fill: none;
 }
