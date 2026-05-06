@@ -596,9 +596,9 @@ footer.site .colophon-line {
   font-size: 0.84rem;
   color: var(--ink-soft);
   line-height: 1.6;
-  text-align: left;
-  hyphens: manual;
-  -webkit-hyphens: manual;
+  text-align: justify;
+  hyphens: auto;
+  -webkit-hyphens: auto;
 }
 
 @media (max-width: 640px) {
