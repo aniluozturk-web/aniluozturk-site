@@ -145,36 +145,22 @@ main { flex: 1; }
 }
 .brand a:hover { opacity: 0.78; }
 
-/* Bespoke AÖ monogram — display italic, tight kerning, bronze accent.
-   The two letters compose the visual mark; the full name follows in ink. */
+/* Brand mark — small çengelli baklava (hooked diamond), the protective
+   Anatolian motif that also tiles the kilim band at the foot of every
+   page. Pomegranate stroke, saffron core. Cultural, non-religious; ties
+   the masthead to the page hem. The previous text monogram (AuÖ in
+   display italic) has been retired. */
 .brand-mark {
-  font-family: var(--serif-display);
-  font-style: italic;
-  font-weight: 500;
-  font-size: 1.55rem;
-  letter-spacing: -0.07em;
+  display: inline-flex;
+  align-items: center;
   color: var(--lu-bronze);
-  line-height: 1;
-  font-feature-settings: "kern" 1, "dlig" 1;
+  line-height: 0;
 }
 
-/* The discreet 'u' — Anıl's favourite letter, tucked into the monogram
-   under the A's right shoulder so it reads as a calligraphic detail of
-   the A's letterform rather than a separate letter (no 'Au' gold-symbol
-   accident). Smaller, lower, and pulled left into the A.
-   Kept aria-hidden via the parent .brand-mark so screen readers still
-   announce only "Anıl Öztürk". */
-.brand-u {
-  font-family: var(--serif-display);
-  font-style: italic;
-  font-weight: 400;
-  font-size: 0.32em;             /* small — about 0.5rem against 1.55rem A */
-  color: var(--lu-bronze);
-  margin: 0 -0.04em 0 -0.22em;   /* tucks left under A; slight tighten to Ö */
-  vertical-align: 0.08em;        /* near baseline — sits on the A's foot, not above */
-  letter-spacing: 0;
-  opacity: 0.7;
-  line-height: 1;
+.brand-mark svg {
+  width: 30px;
+  height: 22px;
+  display: block;
 }
 .brand-name {
   font-family: var(--serif-display);
@@ -482,12 +468,34 @@ section.body:last-of-type { border-bottom: none; }
 
 .hero h1 {
   font-family: var(--serif-display);
-  font-size: clamp(3.2rem, 9.5vw, 7rem);
+  font-size: clamp(2.6rem, 6.4vw, 4.8rem);
   font-weight: 500;
-  letter-spacing: -0.028em;
-  line-height: 0.96;
-  margin-bottom: 24px;
+  letter-spacing: -0.022em;
+  line-height: 1;
+  margin-bottom: 14px;
   color: var(--ink);
+}
+
+/* British-style post-nominals below the H1. Degrees in sans, mixed case
+   as written (so "PhD" reads "PhD", not "PHD"); place abbreviations in
+   serif italic mute ink to ease the visual rhythm. No text-transform —
+   the source text is the rendered text. */
+.hero .post-nominals {
+  margin: 0 0 0 0.04em;
+  font-family: var(--sans);
+  font-size: clamp(0.9rem, 1.55vw, 1.1rem);
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: var(--ink-soft);
+}
+
+.hero .post-nominals .pn-place {
+  font-family: var(--serif-body);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: 0;
+  color: var(--ink-mute);
+  margin: 0 0.05em;
 }
 
 .hero .epigraph {
@@ -2347,6 +2355,59 @@ p.more-link a {
   font-size: 0.95rem;
   color: var(--ink-soft);
   letter-spacing: 0;
+}
+
+/* ═══ Home page — mobile tuning ═════════════════════════════════════════════
+   At narrow viewports, the hero pads down, the H1 stays readable, the
+   post-nominals tighten so they fit on one line at iPhone-SE width
+   (375 CSS px), the giant decorative quote mark scales down so it
+   doesn't overpower the small viewport, and Fraktur is bumped up
+   slightly because UnifrakturMaguntia reads optically small at body
+   weights. */
+@media (max-width: 600px) {
+  .hero {
+    padding: 72px 0 32px;
+  }
+  .hero h1 {
+    font-size: clamp(2.2rem, 9vw, 3.2rem);
+    letter-spacing: -0.018em;
+  }
+  .hero .post-nominals {
+    font-size: 0.82rem;
+    letter-spacing: 0.04em;
+    line-height: 1.4;
+  }
+
+  .hero-epigraph {
+    padding: 4px 0 36px;
+  }
+  .hero-quote {
+    max-width: 100%;
+  }
+  .hero-quote::before {
+    font-size: clamp(3.6rem, 14vw, 4.6rem);
+    margin: 0 0 -2px -0.06em;
+  }
+  .hero-quote .quote-english {
+    font-size: clamp(1.2rem, 5vw, 1.5rem);
+    line-height: 1.4;
+    margin: 0 0 14px;
+  }
+  .hero-quote .quote-german {
+    font-size: clamp(1.1rem, 4.2vw, 1.35rem);
+    line-height: 1.5;
+    margin: 0 0 22px;
+  }
+  .hero-quote .cite-author {
+    font-size: 0.82rem;
+    letter-spacing: 0.14em;
+  }
+  .hero-quote .cite-source {
+    font-size: 0.72rem;
+  }
+  .hero-quote .cite-source cite {
+    font-size: 0.85rem;
+  }
 }
 
 .rosette {
