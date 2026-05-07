@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Anıl Öztürk — Postdoctoral Researcher at the Faculty of Law, Lund University. Legal governance of CO₂ transport and sub-seabed storage; AI and robotics; maritime law; comparative private law.">
+<meta name="theme-color" content="#0e5c6e">
+<meta property="og:title" content="Anıl Öztürk">
+<meta property="og:description" content="Postdoctoral Researcher, Faculty of Law, Lund University.">
+<meta property="og:type" content="profile">
+<title>Anıl Öztürk</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="home">
+
+<header class="masthead">
+  <div class="container masthead-inner">
+    <div class="brand">
+      <a href="index.html" aria-label="Anıl Öztürk — Home">
+        <span class="brand-mark" aria-hidden="true"><svg viewBox="-16 -12 32 24" xmlns="http://www.w3.org/2000/svg"><path d="M-12,0 L0,-9 L12,0 L0,9 Z" stroke="currentColor" fill="none" stroke-width="1.3" stroke-linejoin="miter"/><path d="M-4,0 L0,-2.5 L4,0 L0,2.5 Z" style="fill: var(--lu-bronze-tint)"/><path d="M-12,0 l-2.5,-1.8 M-12,0 l-2.5,1.8 M12,0 l2.5,-1.8 M12,0 l2.5,1.8 M0,-9 l-1.8,-2.5 M0,-9 l1.8,-2.5 M0,9 l-1.8,2.5 M0,9 l1.8,2.5" stroke="currentColor" fill="none" stroke-width="1.1"/></svg></span>
+        <span class="brand-name">Anıl Öztürk</span>
+      </a>
+    </div>
+    <nav class="primary" aria-label="Primary">
+      <a href="index.html"        data-page="home"><span class="nav-num">00</span>Home</a>
+      <a href="about.html"        data-page="about"><span class="nav-num">01</span>About</a>
+      <a href="publications.html" data-page="publications"><span class="nav-num">02</span>Publications</a>
+      <a href="teaching.html"     data-page="teaching"><span class="nav-num">03</span>Teaching</a>
+      <a href="talks.html"        data-page="talks"><span class="nav-num">04</span>Talks</a>
+      <a href="service.html"      data-page="service"><span class="nav-num">05</span>Convening &amp; Supervision</a>
+      <a href="cv.html"           data-page="cv"><span class="nav-num">06</span>CV</a>
+      <a href="contact.html"      data-page="contact"><span class="nav-num">07</span>Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section class="hero">
+  <div class="container">
+    <h1>Anıl Öztürk</h1>
+    <p class="post-nominals">BA <span class="pn-place">(Bilkent)</span> &middot; LLM <span class="pn-place">(Dubl.)</span> &middot; PhD <span class="pn-place">(NUI)</span></p>
+  </div>
+</section>
+
+<section class="hero-epigraph">
+  <div class="container">
+    <figure class="hero-quote" id="hero-quote">
+      <blockquote>
+        <p class="quote-english" lang="en" id="q-en">The purpose is the creator of the entire law.</p>
+        <p class="quote-german" lang="de" id="q-de">Der Zweck ist der Schöpfer des ganzen Rechts.</p>
+      </blockquote>
+      <figcaption class="quote-cite" id="q-cite">
+        <span class="cite-author">Rudolf von Jhering</span>
+        <span class="cite-source"><cite>Der Zweck im Recht</cite>, vol. I&#8202;·&#8202;Leipzig, 1877</span>
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- Rotating Jhering epigraph. A new quote is selected on every page load.
+     Each quote: { en, de, work, year, vol? }. German verbatim from primary
+     sources (gutzitiert.de cross-checked against German Wikiquote and the
+     1883 Zweck im Recht title page); English from Lalor (1879) for Kampf
+     and from a faithful rendering for Zweck. -->
+<script>
+(function(){
+  var quotes = [
+    {
+      en: "The end of the law is peace. The means to that end is war.",
+      de: "Das Ziel des Rechts ist der Friede, das Mittel dazu der Kampf.",
+      work: "Der Kampf ums Recht", year: "1872"
+    },
+    {
+      en: "The sword without the scales is brute force; the scales without the sword is the impotence of law.",
+      de: "Das Schwert ohne die Wage ist die nackte Gewalt, die Wage ohne das Schwert die Ohnmacht des Rechts.",
+      work: "Der Kampf ums Recht", year: "1872"
+    },
+    {
+      en: "The idea of the law is an eternal Becoming; that which has Become must yield to the new Becoming.",
+      de: "Die Idee des Rechts ist ewiges Werden, das Gewordene aber muss dem neuen Werden weichen.",
+      work: "Der Kampf ums Recht", year: "1872"
+    },
+    {
+      en: "The life of the law is struggle — a struggle of nations, of state power, of estates, of individuals.",
+      de: "Das Leben des Rechts ist Kampf, ein Kampf der Völker, der Staatsgewalt, der Stände, der Individuen.",
+      work: "Der Kampf ums Recht", year: "1872"
+    },
+    {
+      en: "All the law in the world has been obtained by strife; every important legal proposition had first to be wrung from those who denied it.",
+      de: "Alles Recht in der Welt ist erstritten worden, jeder wichtige Rechtssatz hat erst denen, die sich ihm widersetzten, abgerungen werden müssen.",
+      work: "Der Kampf ums Recht", year: "1872"
+    },
+    {
+      en: "Every man is a born fighter for the law in the interest of society.",
+      de: "Jeder ist ein geborner Kämpfer um's Recht im Interesse der Gesellschaft.",
+      work: "Der Kampf ums Recht", year: "1872"
+    },
+    {
+      en: "Law is uninterrupted labour — not of the state power alone, but of the entire people.",
+      de: "Recht ist unausgesetzte Arbeit, und zwar nicht etwa bloss der Staatsgewalt, sondern des ganzen Volkes.",
+      work: "Der Kampf ums Recht", year: "1872"
+    },
+    {
+      en: "The purpose is the creator of the entire law.",
+      de: "Der Zweck ist der Schöpfer des ganzen Rechts.",
+      work: "Der Zweck im Recht", vol: "vol. I", year: "1877"
+    },
+    {
+      en: "Money is the true apostle of equality; where money is at stake, all social, political, religious, and national prejudices and antagonisms lose their force.",
+      de: "Das Geld ist der wahre Apostel der Gleichheit; wo es aufs Geld ankommt, verlieren alle socialen, politischen, religiösen, nationalen Vorurtheile und Gegensätze ihre Geltung.",
+      work: "Der Zweck im Recht", vol: "vol. I", year: "1877"
+    },
+    {
+      en: "That the wolves cry for freedom is intelligible; when the sheep join in their cry, they only prove that they are sheep.",
+      de: "Dass die Wölfe nach Freiheit schreien, ist begreiflich; wenn die Schaafe in ihr Geschrei einstimmen, so beweisen sie damit nur, dass sie Schaafe sind.",
+      work: "Der Zweck im Recht", vol: "vol. I", year: "1877"
+    },
+    {
+      en: "Man is crippled in solitude; the true, complete, healthy man exists only in society.",
+      de: "Der Mensch verkrüppelt in der Einsamkeit, der richtige, volle, gesunde Mensch ist nur der Mensch in der Gesellschaft.",
+      work: "Der Zweck im Recht", vol: "vol. II", year: "1883"
+    },
+    {
+      en: "The legislator should think like a philosopher but speak like a peasant.",
+      de: "Der Gesetzgeber soll denken wie ein Philosoph, aber reden wie ein Bauer.",
+      work: "Der Zweck im Recht", year: "1877–1883"
+    }
+  ];
+  var i = Math.floor(Math.random() * quotes.length);
+  var q = quotes[i];
+  var en = document.getElementById('q-en');
+  var de = document.getElementById('q-de');
+  var ct = document.getElementById('q-cite');
+  if (en && de && ct) {
+    en.textContent = q.en;
+    de.textContent = q.de;
+    var src = '<cite>' + q.work + '</cite>';
+    if (q.vol) src += ', ' + q.vol;
+    src += ' · Leipzig, ' + q.year;
+    ct.innerHTML = '<span class="cite-author">Rudolf von Jhering</span>' +
+                   '<span class="cite-source">' + src + '</span>';
+  }
+})();
+</script>
+
+<section class="body">
+  <div class="container">
+    <div class="section-head">
+      <h2>Look up</h2>
+    </div>
+
+    <div class="prose-list">
+      <p><strong><a href="about.html">About →</a></strong> A short biographical sketch.</p>
+      <p><strong><a href="publications.html">Publications →</a></strong> The full bibliography, with abstracts and links.</p>
+      <p><strong><a href="teaching.html">Teaching →</a></strong> Course design and leadership; guest lectures; MOOC contribution.</p>
+      <p><strong><a href="talks.html">Talks →</a></strong> Conference papers, panels, and invited talks, reverse-chronological.</p>
+      <p><strong><a href="service.html">Convening &amp; Supervision →</a></strong> Conferences and seminars convened or co-organised; postgraduate thesis supervision.</p>
+      <p><strong><a href="cv.html">CV →</a></strong> The full curriculum vitae.</p>
+      <p><strong><a href="contact.html">Contact →</a></strong> Get in touch via the form.</p>
+    </div>
+  </div>
+</section>
+
+<div class="kilim-row" aria-hidden="true">
+  <svg class="kilim-anadolu" xmlns="http://www.w3.org/2000/svg" width="100%" height="90">
+    <defs>
+      <g id="k-diamond">
+        <path class="k-diamond-line" d="M-55,0 L0,-13 L55,0 L0,13 Z" fill="none"/>
+        <path class="k-diamond-fine" d="M-32,0 L0,-7 L32,0 L0,7 Z" fill="none"/>
+        <path class="k-diamond-fill" d="M-14,0 L0,-4 L14,0 L0,4 Z"/>
+        <path class="k-diamond-line" d="M-55,0 l-4,-3 M-55,0 l-4,3 M55,0 l4,-3 M55,0 l4,3 M0,-13 l-3,-4 M0,-13 l3,-4 M0,13 l-3,4 M0,13 l3,4" fill="none"/>
+      </g>
+      <g id="k-muska">
+        <path class="k-diamond-fill" d="M0,-12 L-10,7 L10,7 Z"/>
+        <path class="k-diamond-line" d="M0,-12 L-10,7 L10,7 Z" fill="none"/>
+        <path class="k-diamond-fine" d="M0,-6 L-5,2.5 L5,2.5 Z" fill="none"/>
+        <path class="k-diamond-fill" d="M0,-2.5 L-2.5,1.5 L2.5,1.5 Z"/>
+      </g>
+      <g id="k-eli">
+        <path class="k-diamond-fill" d="M0,-11 L-3,-7 L3,-7 Z"/>
+        <path class="k-diamond-line" d="M0,-11 L-3,-7 L3,-7 Z" fill="none"/>
+        <path class="k-diamond-line" d="M-2.5,-7 L2.5,-7 L2.5,-2 L-2.5,-2 Z" fill="none"/>
+        <path class="k-diamond-fine" d="M0,-7 L0,-2" fill="none"/>
+        <path class="k-diamond-fill" d="M-2.5,-5 L-7.5,-1 L-2.5,-1 Z"/>
+        <path class="k-diamond-line" d="M-2.5,-5 L-7.5,-1 L-2.5,-1 Z" fill="none"/>
+        <path class="k-diamond-fill" d="M2.5,-5 L7.5,-1 L2.5,-1 Z"/>
+        <path class="k-diamond-line" d="M2.5,-5 L7.5,-1 L2.5,-1 Z" fill="none"/>
+        <path class="k-diamond-line" d="M-2.5,-1 L2.5,-1 L8,11 L-8,11 Z" fill="none"/>
+        <path class="k-diamond-fine" d="M-1,-1 L-2.5,11 M1,-1 L2.5,11 M-3.5,-1 L-5.3,11 M3.5,-1 L5.3,11" fill="none"/>
+      </g>
+      <pattern id="kilim-tile" patternUnits="userSpaceOnUse" width="320" height="90">
+        <line class="k-edge" x1="0" y1="3" x2="320" y2="3"/>
+        <polyline class="k-border" points="0,8 40,24 80,8 120,24 160,8 200,24 240,8 280,24 320,8" fill="none"/>
+        <line class="k-edge" x1="0" y1="28" x2="320" y2="28"/>
+        <use href="#k-diamond" x="80"  y="45"/>
+        <use href="#k-muska"   x="160" y="45"/>
+        <use href="#k-diamond" x="240" y="45"/>
+        <use href="#k-eli"     x="0"   y="45"/>
+        <use href="#k-eli"     x="320" y="45"/>
+        <line class="k-edge" x1="0" y1="62" x2="320" y2="62"/>
+        <polyline class="k-border" points="0,82 40,66 80,82 120,66 160,82 200,66 240,82 280,66 320,82" fill="none"/>
+        <line class="k-edge" x1="0" y1="87" x2="320" y2="87"/>
+      </pattern>
+    </defs>
+    <rect width="100%" height="90" fill="url(#kilim-tile)"/>
+  </svg>
+</div>
+
+</main>
+
+<footer class="site">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col footer-col-profiles">
+        <h6>Profiles</h6>
+        <ul class="footer-row">
+          <li><a href="https://orcid.org/0000-0002-8169-1602" target="_blank" rel="noopener">ORCID</a></li>
+          <li><a href="https://www.linkedin.com/in/aniluozturk" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://www.researchgate.net/profile/Anil-Ozturk-4" target="_blank" rel="noopener">ResearchGate</a></li>
+          <li><a href="https://nuim.academia.edu/AnilOzturk" target="_blank" rel="noopener">Academia.edu</a></li>
+        </ul>
+      </div>
+      <div class="footer-col footer-col-colophon">
+        <h6>Colophon</h6>
+        <p class="colophon-line">This site is hosted on GitHub Pages. The text is set in EB Garamond and Inter. The visual design was developed using <a href="https://claude.ai" target="_blank" rel="noopener">Claude</a>, an AI assistant by <a href="https://www.anthropic.com" target="_blank" rel="noopener">Anthropic</a>.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/site.js"></script>
+</body>
+</html>
