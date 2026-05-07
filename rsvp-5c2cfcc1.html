@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#2a1520">
+  <title>Thank You | CCS at Sea 2026</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Outfit:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root { --wine: #2a1520; --rose: #c9956b; --rose-light: #dbb08a; --ivory: #fdf8f3; --text: #2c2220; --text-light: #a09590; }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes slideDown { from { opacity: 0; transform: translateY(-12px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes wave1 { 0% { d: path("M0,40 C120,20 240,60 360,35 C480,10 600,50 720,40 C840,30 960,55 1080,40 L1080,120 L0,120 Z"); } 50% { d: path("M0,45 C120,55 240,25 360,45 C480,60 600,30 720,50 C840,40 960,20 1080,45 L1080,120 L0,120 Z"); } 100% { d: path("M0,40 C120,20 240,60 360,35 C480,10 600,50 720,40 C840,30 960,55 1080,40 L1080,120 L0,120 Z"); } }
+    @keyframes wave2 { 0% { d: path("M0,55 C120,45 240,65 360,50 C480,35 600,60 720,55 C840,50 960,40 1080,55 L1080,120 L0,120 Z"); } 50% { d: path("M0,50 C120,60 240,40 360,55 C480,65 600,45 720,50 C840,55 960,65 1080,50 L1080,120 L0,120 Z"); } 100% { d: path("M0,55 C120,45 240,65 360,50 C480,35 600,60 720,55 C840,50 960,40 1080,55 L1080,120 L0,120 Z"); } }
+    @keyframes wave3 { 0% { d: path("M0,65 C120,70 240,55 360,68 C480,75 600,60 720,68 C840,72 960,58 1080,65 L1080,120 L0,120 Z"); } 50% { d: path("M0,68 C120,58 240,72 360,65 C480,55 600,72 720,65 C840,60 960,75 1080,68 L1080,120 L0,120 Z"); } 100% { d: path("M0,65 C120,70 240,55 360,68 C480,75 600,60 720,68 C840,72 960,58 1080,65 L1080,120 L0,120 Z"); } }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Outfit', sans-serif; background: var(--ivory); color: var(--text); min-height: 100vh; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+    .page { min-height: 100vh; display: flex; flex-direction: column; align-items: center; }
+    .hero { width: 100%; position: relative; background: var(--wine); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 72px 32px 100px; text-align: center; overflow: hidden; }
+    .hero::before { content: ''; position: absolute; inset: 0; pointer-events: none; background: radial-gradient(ellipse at 50% 50%, rgba(201,149,107,0.05) 0%, transparent 60%); }
+    .waves { position: absolute; bottom: -1px; left: 0; width: 100%; height: 120px; z-index: 2; }
+    .waves svg { width: 100%; height: 100%; }
+    .wave-path-1 { fill: rgba(253,248,243,0.15); animation: wave1 8s ease-in-out infinite; }
+    .wave-path-2 { fill: rgba(253,248,243,0.25); animation: wave2 6s ease-in-out infinite; }
+    .wave-path-3 { fill: var(--ivory); animation: wave3 7s ease-in-out infinite; }
+    .hero-content { position: relative; z-index: 3; }
+    .hero .conf-tag { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1rem; color: rgba(255,255,255,0.3); letter-spacing: 0.12em; text-transform: uppercase; animation: slideDown 0.8s ease-out 0.2s both; }
+    .hero .conf-tag em { font-style: italic; color: var(--rose-light); text-transform: none; letter-spacing: 0; font-weight: 500; }
+    .hero h1 { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 2.6rem; font-weight: 600; color: #fff; margin: 28px 0 10px; animation: fadeUp 0.8s ease-out 0.5s both; }
+    .hero .sub { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.05rem; color: rgba(255,255,255,0.4); font-style: italic; animation: fadeUp 0.8s ease-out 0.7s both; max-width: 380px; }
+    .foot { text-align: center; padding: 40px 24px 48px; margin-top: auto; animation: fadeUp 0.8s ease-out 0.9s both; }
+    .foot p { font-size: 0.76rem; color: var(--text-light); font-weight: 300; }
+    .foot a { color: var(--rose); text-decoration: none; }
+    @media (max-width: 640px) { .hero { padding: 56px 24px 80px; } .hero h1 { font-size: 2rem; } }
+  </style>
+</head>
+<body>
+<div class="page">
+  <div class="hero">
+    <div class="hero-content">
+      <p class="conf-tag">CCS <em>at Sea</em> 2026</p>
+      <h1>Thank you</h1>
+      <p class="sub">We appreciate you letting us know. We look forward to seeing you at the conference.</p>
+    </div>
+    <div class="waves"><svg viewBox="0 0 1080 120" preserveAspectRatio="none"><path class="wave-path-1" d="M0,40 C120,20 240,60 360,35 C480,10 600,50 720,40 C840,30 960,55 1080,40 L1080,120 L0,120 Z"/><path class="wave-path-2" d="M0,55 C120,45 240,65 360,50 C480,35 600,60 720,55 C840,50 960,40 1080,55 L1080,120 L0,120 Z"/><path class="wave-path-3" d="M0,65 C120,70 240,55 360,68 C480,75 600,60 720,68 C840,72 960,58 1080,65 L1080,120 L0,120 Z"/></svg></div>
+  </div>
+  <div class="foot"><p><a href="https://ccsatsea2026.com">ccsatsea2026.com</a></p></div>
+</div>
+</body>
+</html>

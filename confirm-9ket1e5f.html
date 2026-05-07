@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#0b1d33">
+  <title>Speaker Registration Closed | CCS at Sea 2026</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #0b1d33; --navy-mid: #1a2e48; --teal: #1b8a8a;
+      --gold: #b89a3e; --gold-light: #d4ba5e;
+      --ivory: #faf8f4; --white: #fff;
+      --text: #2c2c2c; --text-mid: #555; --text-light: #999;
+      --border: rgba(0,0,0,0.07);
+    }
+
+    /* ── Animations ── */
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes slideDown { from { opacity: 0; transform: translateY(-16px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes shimmer { 0% { background-position: -200% 0; } 100% { background-position: 200% 0; } }
+    @keyframes breathe { 0%, 100% { opacity: 0.4; transform: scale(1); } 50% { opacity: 0.7; transform: scale(1.05); } }
+    @keyframes floatIn { from { opacity: 0; transform: translateY(24px) scale(0.96); } to { opacity: 1; transform: translateY(0) scale(1); } }
+    @keyframes goldPulse { 0%, 100% { box-shadow: 0 0 0 0 rgba(184,154,62,0); } 50% { box-shadow: 0 0 40px 8px rgba(184,154,62,0.08); } }
+    @keyframes drawLine { from { width: 0; } to { width: 100%; } }
+    @keyframes fadeInScale { from { opacity: 0; transform: scale(0.8); } to { opacity: 1; transform: scale(1); } }
+    @keyframes subtleFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+    @keyframes waveGlow { 0% { opacity: 0.03; } 50% { opacity: 0.08; } 100% { opacity: 0.03; } }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Outfit', sans-serif; background: var(--ivory); color: var(--text); min-height: 100vh; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+    .page { min-height: 100vh; display: flex; flex-direction: column; }
+
+    /* ── Header ── */
+    .header {
+      background: var(--navy);
+      padding: 80px 32px 72px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 30% 80%, rgba(27,138,138,0.06) 0%, transparent 50%),
+        radial-gradient(ellipse at 70% 20%, rgba(184,154,62,0.08) 0%, transparent 50%),
+        radial-gradient(ellipse at 50% 120%, rgba(184,154,62,0.12) 0%, transparent 55%);
+      pointer-events: none;
+    }
+    .header::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 8%;
+      right: 8%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold-light), var(--gold), var(--gold-light), transparent);
+      background-size: 200% 100%;
+      animation: shimmer 4s ease-in-out infinite;
+    }
+
+    /* Animated wave shapes in header */
+    .wave-decoration {
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      right: 0;
+      height: 60px;
+      pointer-events: none;
+    }
+    .wave-decoration svg { width: 100%; height: 100%; }
+
+    /* Floating particles */
+    .particle {
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    .particle-1 { width: 3px; height: 3px; background: var(--gold-light); top: 20%; left: 15%; animation: breathe 4s ease-in-out infinite; }
+    .particle-2 { width: 2px; height: 2px; background: rgba(27,138,138,0.5); top: 35%; right: 20%; animation: breathe 5s ease-in-out 1s infinite; }
+    .particle-3 { width: 4px; height: 4px; background: rgba(184,154,62,0.3); top: 60%; left: 25%; animation: breathe 6s ease-in-out 2s infinite; }
+    .particle-4 { width: 2px; height: 2px; background: var(--gold-light); top: 25%; right: 30%; animation: breathe 4.5s ease-in-out 0.5s infinite; }
+    .particle-5 { width: 3px; height: 3px; background: rgba(27,138,138,0.4); top: 50%; left: 10%; animation: breathe 5.5s ease-in-out 1.5s infinite; }
+    .particle-6 { width: 2px; height: 2px; background: rgba(184,154,62,0.4); top: 70%; right: 15%; animation: breathe 7s ease-in-out 3s infinite; }
+
+    .header .logo {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.4rem;
+      font-weight: 500;
+      color: rgba(255,255,255,0.45);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      animation: slideDown 0.8s ease-out;
+    }
+    .header .logo em { font-style: italic; color: var(--gold-light); text-transform: none; letter-spacing: 0; }
+    .header h1 {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 3rem;
+      font-weight: 600;
+      color: #fff;
+      margin: 28px 0 16px;
+      line-height: 1.15;
+      animation: slideDown 0.8s ease-out 0.15s both;
+    }
+    .header .date {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.78rem;
+      color: var(--gold-light);
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      animation: slideDown 0.8s ease-out 0.3s both;
+    }
+
+    /* ── Body ── */
+    .body {
+      flex: 1;
+      max-width: 620px;
+      width: 100%;
+      margin: -20px auto 0;
+      padding: 0 24px 56px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ── Card ── */
+    .card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 60px 52px;
+      box-shadow: 0 8px 40px rgba(11,29,51,0.07);
+      animation: floatIn 1s ease-out 0.4s both, goldPulse 6s ease-in-out 2s infinite;
+      position: relative;
+      overflow: hidden;
+    }
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, transparent 5%, var(--gold) 30%, var(--gold-light) 50%, var(--gold) 70%, transparent 95%);
+      background-size: 200% 100%;
+      animation: shimmer 4s ease-in-out infinite;
+    }
+    .card::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, transparent 5%, var(--teal) 30%, rgba(27,138,138,0.6) 50%, var(--teal) 70%, transparent 95%);
+      background-size: 200% 100%;
+      animation: shimmer 4s ease-in-out 2s infinite;
+    }
+
+    /* ── Seal / Icon ── */
+    .seal {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 32px;
+      position: relative;
+      animation: fadeInScale 0.8s ease-out 0.8s both;
+    }
+    .seal-ring {
+      width: 80px;
+      height: 80px;
+      border: 2px solid var(--gold);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      animation: subtleFloat 4s ease-in-out infinite;
+    }
+    .seal-ring::before {
+      content: '';
+      position: absolute;
+      inset: -6px;
+      border: 1px solid rgba(184,154,62,0.2);
+      border-radius: 50%;
+    }
+    .seal-ring::after {
+      content: '';
+      position: absolute;
+      inset: 4px;
+      border: 1px solid rgba(184,154,62,0.15);
+      border-radius: 50%;
+    }
+    .seal-icon {
+      color: var(--gold);
+      width: 32px;
+      height: 32px;
+    }
+
+    /* ── Content ── */
+    .closed-title {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: var(--navy);
+      text-align: center;
+      margin-bottom: 8px;
+      animation: fadeUp 0.7s ease-out 1s both;
+    }
+    .closed-subtitle {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.88rem;
+      font-weight: 400;
+      color: var(--text-light);
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 36px;
+      animation: fadeUp 0.7s ease-out 1.1s both;
+    }
+
+    .sep {
+      width: 60px;
+      height: 1px;
+      margin: 0 auto 36px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      animation: fadeUp 0.7s ease-out 1.2s both;
+    }
+
+    .message {
+      text-align: center;
+      animation: fadeUp 0.7s ease-out 1.3s both;
+    }
+    .message p {
+      font-size: 0.96rem;
+      color: var(--text-mid);
+      line-height: 1.85;
+      margin-bottom: 16px;
+    }
+    .message p:last-child { margin-bottom: 0; }
+    .message em {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.02rem;
+      color: var(--text);
+    }
+
+    /* ── Programme button ── */
+    .programme-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 32px;
+      padding: 15px 36px;
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 12px;
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.92rem;
+      font-weight: 500;
+      letter-spacing: 0.03em;
+      transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+      animation: fadeUp 0.7s ease-out 1.5s both;
+    }
+    .programme-link::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(184,154,62,0.15) 0%, transparent 60%);
+      opacity: 0;
+      transition: opacity 0.35s;
+    }
+    .programme-link:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 32px rgba(11,29,51,0.2), 0 0 0 1px rgba(184,154,62,0.15);
+    }
+    .programme-link:hover::before { opacity: 1; }
+    .programme-link:active { transform: translateY(-1px); }
+    .programme-link svg {
+      position: relative;
+      transition: transform 0.3s;
+    }
+    .programme-link:hover svg { transform: translateX(3px); }
+
+    /* ── Contact line ── */
+    .contact {
+      margin-top: 32px;
+      text-align: center;
+      animation: fadeUp 0.7s ease-out 1.6s both;
+    }
+    .contact p {
+      font-size: 0.84rem;
+      color: var(--text-light);
+      line-height: 1.7;
+    }
+    .contact a {
+      color: var(--teal);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.3s;
+    }
+    .contact a:hover { border-bottom-color: var(--teal); }
+
+    /* ── Footer ── */
+    .foot {
+      text-align: center;
+      padding: 36px 24px 48px;
+      animation: fadeUp 0.7s ease-out 1.8s both;
+      position: relative;
+    }
+    .foot::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(0,0,0,0.1), transparent);
+    }
+    .foot-logos {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 28px;
+      margin-bottom: 16px;
+      opacity: 0.3;
+      transition: opacity 0.3s;
+    }
+    .foot-logos:hover { opacity: 0.55; }
+    .foot-logos img { height: 28px; }
+    .foot p { font-size: 0.8rem; color: var(--text-light); line-height: 1.6; }
+    .foot a { color: var(--teal); text-decoration: none; }
+
+    @media (max-width: 640px) {
+      .header { padding: 56px 24px 52px; }
+      .header h1 { font-size: 2.2rem; }
+      .card { padding: 44px 28px; }
+      .programme-link { width: 100%; justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="page">
+
+  <div class="header">
+    <div class="particle particle-1"></div>
+    <div class="particle particle-2"></div>
+    <div class="particle particle-3"></div>
+    <div class="particle particle-4"></div>
+    <div class="particle particle-5"></div>
+    <div class="particle particle-6"></div>
+
+    <div class="logo">CCS <em>at Sea</em> 2026</div>
+    <h1>Speaker Registration Closed</h1>
+    <p class="date">7 &ndash; 8 May 2026 &middot; Faculty of Law, Lund University</p>
+
+    <div class="wave-decoration">
+      <svg viewBox="0 0 1440 60" preserveAspectRatio="none" fill="none">
+        <path d="M0,40 C360,10 720,55 1080,25 C1260,12 1380,30 1440,20 L1440,60 L0,60 Z" fill="var(--ivory)" opacity="0.5"/>
+        <path d="M0,45 C320,20 680,55 1040,30 C1240,18 1360,35 1440,28 L1440,60 L0,60 Z" fill="var(--ivory)"/>
+      </svg>
+    </div>
+  </div>
+
+  <div class="body">
+    <div class="card">
+
+      <div class="seal">
+        <div class="seal-ring">
+          <svg class="seal-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 12l2 2 4-4"/>
+            <circle cx="12" cy="12" r="10"/>
+          </svg>
+        </div>
+      </div>
+
+      <div class="closed-title">Thank You for Your Attention</div>
+      <div class="closed-subtitle">Registration period has ended</div>
+
+      <div class="sep"></div>
+
+      <div class="message">
+        <p>Speaker registration for</p>
+        <p style="margin-bottom: 4px;"><em>Carbon Capture &amp; Storage at Sea:</em></p>
+        <p style="margin-bottom: 20px;"><em>Regulation and Governance of Transport,<br>Sequestration, and Liability</em></p>
+        <p>is now closed.</p>
+        <p style="margin-top: 20px;">
+          We look forward to welcoming our confirmed speakers in Lund.
+        </p>
+
+        <a href="programme.html" class="programme-link">
+          View the Conference Programme
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <div class="contact">
+        <p>Questions? Use the <a href="registration.html">contact form</a></p>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="foot">
+    <div class="foot-logos">
+      <img src="assets/logos/lu-jurfak-logo.png" alt="Lund University, Faculty of Law">
+      <img src="assets/logos/gu-handels-logo.png" alt="University of Gothenburg">
+      <img src="assets/logos/mmw-logo.png" alt="Marianne and Marcus Wallenberg Foundation">
+    </div>
+    <p>Questions? <a href="registration.html">Use our contact form</a> · <a href="https://ccsatsea2026.com">ccsatsea2026.com</a></p>
+  </div>
+
+</div>
+
+</body>
+</html>
