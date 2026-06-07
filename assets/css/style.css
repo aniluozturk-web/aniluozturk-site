@@ -60,10 +60,10 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  hyphens: auto;
+  hyphens: manual;
 }
 
-p, .entry-body, .cc-body { text-align: justify; hyphens: auto; }
+p, .entry-body, .cc-body { text-align: justify; hyphens: manual; }
 
 @media (max-width: 720px) { body { font-size: 17px; } }
 
@@ -597,8 +597,21 @@ footer.site .colophon-line {
   color: var(--ink-soft);
   line-height: 1.6;
   text-align: justify;
-  hyphens: auto;
-  -webkit-hyphens: auto;
+  hyphens: manual;
+  -webkit-hyphens: manual;
+}
+
+footer.site .colophon-updated {
+  margin: 12px 0 0;
+  font-family: var(--sans);
+  font-size: 0.84rem;
+  color: var(--ink);
+  line-height: 1.6;
+  letter-spacing: 0.01em;
+}
+
+footer.site .colophon-updated strong {
+  font-weight: 600;
 }
 
 @media (max-width: 640px) {
@@ -798,6 +811,17 @@ footer.site .lu-attribution img {
 }
 .cv-detail em { font-style: italic; }
 .cv-detail strong { font-weight: 600; color: var(--ink); }
+.cv-footnote {
+  margin-top: 4px;
+  font-family: var(--serif-body);
+  font-size: 0.83rem;
+  font-style: italic;
+  line-height: 1.5;
+  color: var(--ink-mute);
+}
+.cv-footnote sup {
+  font-style: normal;
+}
 
 /* ── Top-level bullets — refined hairline em-dash markers ─────────────── */
 .cv-bullets {
