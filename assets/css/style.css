@@ -92,12 +92,16 @@ p:last-child { margin-bottom: 0; }
 em, i { font-style: italic; }
 strong, b { font-weight: 600; }
 
-h1, h2, h3, h4, h5 {
+h1, h2, h3, h4, h5, h6 {
   font-family: var(--serif-display);
   font-weight: 500;
   line-height: 1.12;
   color: var(--ink);
   letter-spacing: -0.01em;
+  /* Display headings are never justified; otherwise narrow viewports
+     stretch two-word lines into awkward gaps. Body prose still uses
+     text-align: justify (set on `body`). */
+  text-align: left;
 }
 
 /* ═══ Layout ═══ */
@@ -612,6 +616,19 @@ footer.site .colophon-updated {
 
 footer.site .colophon-updated strong {
   font-weight: 600;
+}
+
+/* Page-foot copyright stamp: smallest type on the site, centered
+   beneath the two-column footer grid, mono to read as metadata
+   rather than prose. Quiet — only an ownership stamp, no claim
+   beyond the symbol-and-name minimum. */
+footer.site .footer-copy {
+  margin: 32px 0 0;
+  text-align: center;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  color: var(--ink-mute);
+  letter-spacing: 0.04em;
 }
 
 @media (max-width: 640px) {
